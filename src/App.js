@@ -9,7 +9,7 @@ import LoginForm from './component/mainComponent/LoginForm';
 
 const store = createStore(rootReducer)
 function App() {
-  const [log,setLog] = useState(false);
+  const [log,setLog] = useState(true);
 
   let change = () => {
     setLog(true);
