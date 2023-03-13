@@ -1,6 +1,7 @@
 import React from 'react'
 
 export default function Modal(props) {
+    console.log(props);
     return (
         <div>
             <div>
@@ -8,15 +9,15 @@ export default function Modal(props) {
                     <div className="modal-dialog modal-lg" role="document">
                         <div className="modal-content">
                             <div className="modal-header">
-                                <h5 className="modal-title">{props.item.name}</h5>
+                                <h5 className="modal-title">{props.product.title}</h5>
                                 <button type="button" className="close" data-dismiss="modal" aria-label="Close">
                                     <span aria-hidden="true">×</span>
                                 </button>
                             </div>
                             <div className="modal-body d-flex flex-column align-items-center">
-                                <img src={props.item.img}/>
-                                <span className="mt-2" style={{color:"black", fontWeight:"normal"}}>{props.item.des}</span>
-                                <p style={{fontSize:"25px"}} className="text-danger mt-3">Giá niêm yết: {props.item.price.toLocaleString()}</p>
+                                <img src={props.product.img} alt={props.product.title}/>
+                                <span className="mt-2" style={{color:"black", fontWeight:"normal"}}>{props.product.des}</span>
+                                <p style={{fontSize:"25px"}} className="text-danger mt-3">Giá niêm yết: {props.product.price.toLocaleString()}</p>
                             </div>
                             <div className="modal-footer">
                                 <button type="button" className="btn btn-secondary" data-dismiss="modal">Close</button>

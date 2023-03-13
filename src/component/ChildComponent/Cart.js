@@ -1,6 +1,6 @@
 import React from 'react'
 import { useSelector, useDispatch } from 'react-redux'
-import { ChangeQuanlity } from '../../redux/action/action';
+import { ChangeQuanlity } from '../../redux/action/actions';
 export default function Cart() {
     let dataCart = useSelector(state => state.DataMedicine.Cart)
     let dispatch=useDispatch();
@@ -8,7 +8,7 @@ export default function Cart() {
         return dataCart.map((item, index) => {
             return <tr style={{ lineHeight: "80px" }} key={index}>
                 <td>{index + 1}</td>
-                <td>{item.name}</td>
+                <td>{item.title}</td>
                 <td><img style={{ width: "80px" }} src={item.img} /></td>
                 <td>{item.price.toLocaleString()}</td>
                 <td>{item.sl}</td>
@@ -25,7 +25,7 @@ export default function Cart() {
     return (
         <div>
             <div>
-                <div className="modal fade " id="modelId2" tabIndex={-1} role="dialog" aria-labelledby="modelTitleId" aria-hidden="true">
+                <div className="modal fade " id="modelId2" tabIndex={-1} role="dialog" aria-labelledby="modelTitleId2" aria-hidden="true">
                     <div style={{ margin:"auto", textAlign:"center"}} className=" mt-5 pb-4 modal-dialog modal-xl modal-dialog-scrollable" role="document">
                         <div  className="modal-content">
                             <div className="modal-header">
@@ -50,7 +50,7 @@ export default function Cart() {
                                     <tbody>
                                        {rederCart()}
                                        <tr>
-                                        <th colspan={5}>Tổng Tiền</th>
+                                        <th colSpan={5}>Tổng Tiền</th>
                                         <th>{sumTotal().toLocaleString()}</th>
                                        </tr>
                                     </tbody>
