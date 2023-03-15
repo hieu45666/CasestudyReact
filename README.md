@@ -16,3 +16,9 @@ Open a new terminal, use script:
 ### `node mock-api/app.js`
 
 to run back-end server.
+
+In the case, the terminail notify "React script is not recornized", you can run:
+
+### `npm install`
+
+to install node_modules.
