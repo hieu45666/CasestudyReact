@@ -1,7 +1,8 @@
 import { combineReducers } from "redux"
 import { DataMedicine } from "./DataMedicine"
-import { DataMedicine1 } from "./DataMedicine1"
+import { DataUser } from './DataUser'
+
 export const rootReducer=combineReducers({
     DataMedicine,
-    DataMedicine1
+    DataUser
 })

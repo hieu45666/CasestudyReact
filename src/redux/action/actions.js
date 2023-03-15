@@ -1,4 +1,4 @@
-import { ADD_CART, CHANGE_QUANLITY, SEND, EDIT_PRODUCT, DELETE_PRODUCT } from "../type/type";
+import { ADD_CART, CHANGE_QUANLITY, SEND, EDIT_PRODUCT, DELETE_PRODUCT, SET_ROLE } from "../type/type";
 
 export const addToCart = (addData) => ({
   type: ADD_CART,
@@ -21,4 +21,9 @@ export const editProduct = (product) => ({
 export const deleteProduct = (id) => ({
   type: DELETE_PRODUCT,
   payload: {id}
+})
+
+export const setRole = (user) => ({
+  type: SET_ROLE,
+  user
 })

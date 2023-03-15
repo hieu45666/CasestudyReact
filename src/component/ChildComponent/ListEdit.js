@@ -4,7 +4,7 @@ import { deleteProduct} from "../../redux/action/actions";
 
 const ListEdit = (props) => {
 
-    let productList = useSelector(state => state.DataMedicine1.dataListProduct);
+    let productList = useSelector(state => state.DataMedicine.dataListProduct);
     let dispatch = useDispatch();
 
     const editProduct = (id) => {

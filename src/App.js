@@ -1,29 +1,27 @@
 import './App.css';
 import  {useState, useEffect} from 'react';
-import Home from './component/mainComponent/Home';
+import Home from './component/mainComponent/HomeAdmin';
 import 'bootstrap/dist/css/bootstrap.css';
-import { createStore } from 'redux';
-import { Provider } from 'react-redux';
-import { rootReducer } from './redux/rootReducer/rootReducer';
+import { useSelector } from 'react-redux';
 import LoginForm from './component/mainComponent/LoginForm';
+import HomeUser from './component/mainComponent/HomeUser';
 
-const store = createStore(rootReducer)
 function App() {
-  const [log,setLog] = useState(true);
+  const role = useSelector(state => state.DataUser.role);
+  useEffect(() => {},[role]);
 
-  let change = () => {
-    setLog(true);
-  }
-
-  if (log)
+  if (role === "admin")
   return (
     <div className="App">
-      <Provider store={store}>
-      <Home/>
-    </Provider>
+        <Home/>
     </div>
-  );
-  else return (<LoginForm changeLoginStatus={change}/>);
+  ); else if (role === "user") 
+  return (
+    <div className="App">
+      <HomeUser/>
+      </div>
+  )
+  else return (<LoginForm/>);
 }
 
 export default App;

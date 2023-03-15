@@ -1,7 +1,8 @@
-import React, { useState, useEffect } from "react";
+import React from "react";
 import { useSelector } from "react-redux";
 import Cart from "./Cart";
-import EditProduct from "./EditProduct1";
+import {Link} from 'react-router-dom';
+import { routers } from "../../router/routers";
 
 export default function Menu() {
   let dataCart = useSelector((state) => state.DataMedicine.Cart);
@@ -19,23 +20,13 @@ export default function Menu() {
         style={{ maxWidth: "1100px", margin: "auto" }}
         className="nav nav-tabs p-3"
       >
-        <li className="nav-item">
-          <a className="nav-link text-secondary" href="#" role="button">
-            Home
-          </a>
+        {routers.map((router) => {
+          return <li className="nav-item active">
+          <Link className="nav-link text-secondary" to={router.path} role="button">
+            {router.name}
+          </Link>
         </li>
-        <li className="nav-item">
-          <a
-            type="button"
-            data-toggle="modal"
-            data-target="#modelId1"
-            href="#"
-            className="nav-link"
-          >
-            Edit Medicine
-          </a>
-          <EditProduct />
-        </li>
+        })}
 
         <li className="nav-item dropdown">
                     <a className="nav-link dropdown-toggle text-secondary" data-toggle="dropdown" href="#" role="button" aria-haspopup="true" aria-expanded="false"><i className="fa fa-user"></i> My acount</a>
@@ -43,21 +34,20 @@ export default function Menu() {
                         <a className="dropdown-item" href="#">Info</a>
                         <a className="dropdown-item" href="#">Change Password</a>
                         <div className="dropdown-divider" />
-                        <a className="dropdown-item" href="#">Log Out</a>
+                        <button className="btn-link dropdown-item" href="#">Log Out</button>
                     </div>
                 </li>
 
         <li className="nav-item">
-          <a
-            type="button"
-            data-toggle="modal"
+          <button type="button" data-toggle="modal"
             data-target="#modelId2"
             href="#"
-            className="nav-link"
-          >
-            <i className="fa fa-cart-arrow-down"></i> Cart( {dataCart.length}{" "}
-            item)
-          </a>
+            className="nav-link btn btn-primary position-relative">
+              <i className="fa fa-cart-arrow-down"></i>
+              <span class="position-absolute top-0 start-100 translate-middle badge rounded-pill bg-danger">
+              {dataCart.length}
+              </span>
+              </button>
           <Cart />
         </li>
       </ul>

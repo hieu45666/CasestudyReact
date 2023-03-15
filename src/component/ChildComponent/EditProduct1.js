@@ -5,7 +5,7 @@ import ListEdit from './ListEdit';
 import AddProduct from './AddProduct';
 
 const EditProduct = () => {
-  let productList = useSelector((state) => state.DataMedicine1.dataListProduct);
+  let productList = useSelector((state) => state.DataMedicine.dataListProduct);
   let dispatch = useDispatch();
 
   const editProduct = (item) => {

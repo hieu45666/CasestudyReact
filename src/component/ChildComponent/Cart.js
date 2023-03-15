@@ -1,8 +1,9 @@
-import React from 'react'
+import React, { useEffect } from 'react'
 import { useSelector, useDispatch } from 'react-redux'
 import { ChangeQuanlity } from '../../redux/action/actions';
 export default function Cart() {
     let dataCart = useSelector(state => state.DataMedicine.Cart)
+    useEffect(()=>{},[dataCart]);
     let dispatch=useDispatch();
     let rederCart = () => {
         return dataCart.map((item, index) => {

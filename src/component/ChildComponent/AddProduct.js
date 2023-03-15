@@ -4,7 +4,7 @@ import { editProduct } from "../../redux/action/actions";
 
 const AddProduct = (props) => {
   let dispatch = useDispatch();
-  const product = useSelector((state) => state.DataMedicine1.product);
+  const product = useSelector((state) => state.DataMedicine.product);
   let [data, setData] = useState({
     title: "",
     img: "",

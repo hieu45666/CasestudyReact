@@ -3,9 +3,9 @@ import Modal from './Modal'
 import { useDispatch, useSelector} from 'react-redux'
 import { addToCart } from '../../redux/action/actions';
 
-export default function ListProduct(props) {
+export default function Product(props) {
     
-    let data = useSelector(state => state.DataMedicine1.dataListProduct);
+    let data = useSelector(state => state.DataMedicine.dataListProduct);
     let dispatch = useDispatch();
     let [product,setProduct] = useState({
         title: "",

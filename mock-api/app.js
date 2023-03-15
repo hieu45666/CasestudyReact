@@ -1,6 +1,6 @@
 const express = require('express');
 const app = express();
-const cors = require("cors");
+const fs = require('fs');
 const {
     readAllTask,
     createTask,
@@ -9,8 +9,12 @@ const {
     deleteTask
   } = require("./task/task");
 const port = 9000;
+var bodyParser = require('body-parser');
+var cors = require('cors');
+app.use(cors({origin: '*'}));
 
-app.use(cors({ origin: true, credentials: true }));
+app.use(bodyParser.urlencoded( {extended : true}));
+app.use(bodyParser.json());
 
 app.listen(port, () => {
     console.log(`Example app listening at http://localhost:${port}`);
@@ -33,3 +37,11 @@ app.post('/medicines', (req, res) => {
     if (newTask) {console.log("Tạo thành công");}
     else {console.log("Tạo thất bại");}
 });
+
+app.post('/login', function(req, res) {
+    let user = req.body;
+    const userList = JSON.parse(fs.readFileSync(`${__dirname}/data/user.json`).toString());
+    let index = userList.findIndex(x => x.username === user.username&&x.password===user.password);
+    if (index !== -1) res.json(userList[index]);
+    else res.json('Sai tài khoản hoặc mật khẩu');
+})

@@ -1,7 +1,16 @@
 [
     {
-        "loginStatus":true,
-        "username": "admin",
-        "password": "12345"
+    "username": "admin",
+    "password": "123456",
+    "role": "admin",
+    "email": "hieu@gmail.com",
+    "birthday": ""
+    },
+    {
+    "username": "user",
+    "password": "123456",
+    "role": "user",
+    "email": "hieu@gmail.com",
+    "birthday": ""
     }
 ]
