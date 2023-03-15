@@ -30,7 +30,7 @@ const LoginForm = (props) => {
     });
 }
   return (
-    <div className="container" style={{top:200}}>
+    <div className="container bg-white" style={{margin:'auto', width:"250px"}}>
       <form method="post">
       <fieldset className="border">
       <legend>Đăng nhập</legend>

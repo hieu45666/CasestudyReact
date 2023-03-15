@@ -11,12 +11,14 @@ export default function Home1() {
     <div>
       <BrowserRouter>
       <Header/>
+      <div className="bg-secondary">
       <Nav/>
-      <div className='container w-50 h-50'>
+      <div className='container justify-context-center'>
       <Routes>
-          <Route path='/login' element={<LoginForm/>} key='login'></Route>
+          <Route path='/' element={<LoginForm/>} key='login'></Route>
           <Route path='/signup' element={<SignUpForm/>} key='signup'></Route>
       </Routes>
+      </div>
       </div>
       <Footer/>
       </BrowserRouter>

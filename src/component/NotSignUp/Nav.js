@@ -10,14 +10,16 @@ export default function Nav() {
                 zIndex: 9999,
                 backgroundColor: "white",
             }}
-            className="mt-3 "
+            className="mt-3"
         >
-            <Link className="nav-link text-secondary" to='/login' role="button">
+            <ul className="nav justify-content-center">
+            <Link className="nav-link text-secondary active" to='/' role="button">
                 Login
             </Link>
             <Link className="nav-link text-secondary" to='/signup' role="button">
                 Sign Up
             </Link>
+            </ul>
         </div>
     );
 }

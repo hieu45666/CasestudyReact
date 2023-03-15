@@ -1,7 +1,7 @@
 import React from "react";
 import { useDispatch, useSelector } from "react-redux";
 import Cart from "./Cart";
-import EditProduct from "./EditProduct1";
+import EditProduct from "./EditProduct";
 import {Link} from 'react-router-dom';
 import { routers } from "../../router/routers";
 import { logOut } from "../../redux/action/actions";

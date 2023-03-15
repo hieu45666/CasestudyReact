@@ -4,7 +4,8 @@ const initialState = {
     username : "",
     role: "",
     birthday: "",
-    email: ""
+    email: "",
+    name: "",
 }
 
 export const DataUser = (state = initialState, action) => {

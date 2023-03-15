@@ -41,7 +41,22 @@ app.post('/medicines', (req, res) => {
 app.post('/login', function(req, res) {
     let user = req.body;
     const userList = JSON.parse(fs.readFileSync(`${__dirname}/data/user.json`).toString());
-    let index = userList.findIndex(x => x.username === user.username&&x.password===user.password);
-    if (index !== -1) res.json(userList[index]);
-    else res.json('Sai tài khoản hoặc mật khẩu');
+    let index = userList.findIndex(x => x.username === user.username);
+    if (index !== -1) {
+        if (user.password !== userList[index].password) {res.json("Sai mật khẩu")}
+        else res.json(userList[index]);}
+    else res.json('Tài khoản không tồn tại');
+})
+
+app.post('/signup', function(req, res) {
+    let user = req.body;
+    const userList = JSON.parse(fs.readFileSync(`${__dirname}/data/user.json`).toString());
+    let index = userList.findIndex(x => x.username === user.username);
+    if (index !== -1) res.json('User đã tồn tại')
+    else {
+        userList.push(user);
+        delete user.repass;
+        fs.writeFileSync(`${__dirname}/data/user.json`, JSON.stringify(userList));
+        res.end('Tạo tài khoản thành công');
+    }
 })

@@ -1,18 +1,1 @@
-[
-    {
-    "username": "admin",
-    "password": "123456",
-    "role": "admin",
-    "email": "hieu@gmail.com",
-    "birthday": "",
-    "name":"Hiếu"
-    },
-    {
-    "username": "user",
-    "password": "123456",
-    "role": "user",
-    "email": "hieu@gmail.com",
-    "birthday": "",
-    "name": "Hiếu"
-    }
-]
+[{"username":"admin","password":"123456","role":"admin","email":"hieu@gmail.com","birthday":"","name":"Hiếu"},{"username":"user","password":"123456","role":"user","email":"hieu@gmail.com","birthday":"","name":"Hiếu"},{"username":"hieu123","password":"20091997","repass":"20091997","email":"hieu@gmail.com","birthday":"2023-03-02","name":"Hiếu","role":"user"},{"username":"hieu1234","password":"1234567","email":"23423@gmail.com","birthday":"2023-03-07","name":"dfgsdg","role":"user"}]
