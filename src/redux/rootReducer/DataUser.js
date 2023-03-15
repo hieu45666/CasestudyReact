@@ -1,4 +1,4 @@
-import {SET_ROLE} from '../type/type'
+import {SET_ROLE, LOG_OUT} from '../type/type'
 
 const initialState = {
     username : "",
@@ -12,6 +12,8 @@ export const DataUser = (state = initialState, action) => {
         case SET_ROLE:{
             return {...action.user}
         }
+        case LOG_OUT:
+            return initialState;
         default:
             return state;
     }

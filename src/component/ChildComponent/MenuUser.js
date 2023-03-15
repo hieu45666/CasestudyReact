@@ -1,11 +1,13 @@
 import React from "react";
-import { useSelector } from "react-redux";
+import { useSelector, useDispatch } from "react-redux";
 import Cart from "./Cart";
 import {Link} from 'react-router-dom';
 import { routers } from "../../router/routers";
+import { logOut } from "../../redux/action/actions";
 
 export default function Menu() {
   let dataCart = useSelector((state) => state.DataMedicine.Cart);
+  let dispatch = useDispatch();
   return (
     <div
       style={{
@@ -34,7 +36,7 @@ export default function Menu() {
                         <a className="dropdown-item" href="#">Info</a>
                         <a className="dropdown-item" href="#">Change Password</a>
                         <div className="dropdown-divider" />
-                        <button className="btn-link dropdown-item" href="#">Log Out</button>
+                        <button className="btn-link dropdown-item" onClick={()=>{dispatch(logOut())}} >Log Out</button>
                     </div>
                 </li>
 

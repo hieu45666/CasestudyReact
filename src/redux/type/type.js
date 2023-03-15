@@ -5,3 +5,4 @@ export const GET_DETAIL = "getDetail";
 export const EDIT_PRODUCT = "editProduct";
 export const DELETE_PRODUCT = "deleteProduct";
 export const SET_ROLE = "setRole";
+export const LOG_OUT = "logOut";

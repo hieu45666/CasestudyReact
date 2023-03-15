@@ -1,9 +1,9 @@
 import './App.css';
-import  {useState, useEffect} from 'react';
+import  { useEffect } from 'react';
 import Home from './component/mainComponent/HomeAdmin';
 import 'bootstrap/dist/css/bootstrap.css';
 import { useSelector } from 'react-redux';
-import LoginForm from './component/mainComponent/LoginForm';
+import Home1 from './component/NotSignUp/Home';
 import HomeUser from './component/mainComponent/HomeUser';
 
 function App() {
@@ -21,7 +21,7 @@ function App() {
       <HomeUser/>
       </div>
   )
-  else return (<LoginForm/>);
+  else return (<Home1/>);
 }
 
 export default App;
